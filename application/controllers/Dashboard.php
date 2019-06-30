@@ -12,13 +12,11 @@ class Dashboard extends CI_Controller {
 	public function index(){
         $data['tasks_num'] = $this->dashboard_model->get_num_tasks();
         $data['users_num'] = $this->dashboard_model->get_num_users();
-        $data['numbers'] = '['.$this->dashboard_model->get_num_tasks('Finalizada').','.$this->dashboard_model->get_num_tasks('Espera').','.$this->dashboard_model->get_num_tasks('Desenvolvimento').']';
+        $data['chart'] = '['.$this->dashboard_model->get_num_tasks('Finalizada').','.$this->dashboard_model->get_num_tasks('Espera').','.$this->dashboard_model->get_num_tasks('Desenvolvimento').']';
+        $data['users'] = $this->dashboard_model->get_busier_users();
         
-        $data['title'] = 'Dashboard';
-        $data['subtitle'] = 'Visualização geral do sistema.';
-        $data['link'] = '#';
-        
-        $this->load->view('templates/header', $data);
+        $this->load->view('templates/header');
+        $this->load->view('templates/menu');
         $this->load->view('dashboard/content', $data);
         $this->load->view('templates/footer');
     }

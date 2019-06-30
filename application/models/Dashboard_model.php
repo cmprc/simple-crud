@@ -18,7 +18,7 @@ class Dashboard_model extends CI_Model{
     }
 
     public function get_busier_users(){
-        
+        return $this->db->select('users.nome, COUNT(users.id) as quantidade FROM users INNER JOIN users_tasks ON users.id = users_tasks.id_user')->group_by('users.nome')->order_by('quantidade', 'DESC')->limit(5)->get()->result_array();
     }
 
 }

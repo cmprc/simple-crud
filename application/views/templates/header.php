@@ -5,9 +5,6 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
     <title>eZoom</title>
@@ -40,61 +37,10 @@
                 <div class="header4-wrap">
                     <div class="header__logo">
                         <a href="#">
-                            <img src="<?= base_url() ?>/assets/images/icon/logo-blue.png" alt="CoolAdmin" />
+                            <img src="<?= base_url() ?>/assets/images/logos/logo.png" alt="Trello" />
                         </a>
                     </div>
                 </div>
             </div>
         </header>
         <!-- END HEADER DESKTOP -->
-
-        <!-- WELCOME-->
-        <section class="welcome2 p-b-55">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="welcome2-inner m-t-60">
-                            <div class="welcome2-greeting">
-                                <h1 class="title-6"><?= $title ?></h1>
-                                <p><?= $subtitle ?></p>
-                            </div>
-                            <a href="users/<?= $link ?>"><button type="button" class="btn btn-secondary">Adicionar</button></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- END WELCOME-->
-
-        <!-- PAGE CONTENT-->
-        <div class="page-container3">
-            <section>
-                <div class="container p-t-40">
-                    <div class="row">
-                        <div class="col-xl-3">
-                            <!-- MENU SIDEBAR-->
-                            <aside class="menu-sidebar3 js-spe-sidebar">
-                                <nav class="navbar-sidebar2 navbar-sidebar3">
-                                    <ul class="list-unstyled navbar__list">
-                                        <li>
-                                            <a href="/ezoom">
-                                            <i class="fa fa-calendar-o"></i>Dashboard</a>
-                                        </li>
-                                        <li>
-                                            <a href="tasks">
-                                            <i class="fa fa-chart-bar"></i>Tarefas</a>
-                                        </li>
-                                        <li>
-                                            <a href="users">
-                                            <i class="fa fa-users"></i>Usuários</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </aside>
-                            <!-- END MENU SIDEBAR-->
-                        </div>
-                        <div class="col-xl-9">
-                            <!-- PAGE CONTENT-->
-                            <div class="page-content">
-                                <div class="row">
-                                    <div class="col-lg-12">

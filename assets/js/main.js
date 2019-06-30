@@ -9,16 +9,16 @@
     var ctx = document.getElementById("tasks-chart");
     if (ctx) {
       ctx.height = 209;
-      var numbers = $(ctx).data('value');
-      if(numbers == undefined)
-        numbers = [0, 0, 0];
+      var chart = $(ctx).data('value');
+      if(chart == undefined)
+        chart = [0, 0, 0];
       var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
           datasets: [
             {
               label: "Tarefas",
-              data: numbers,
+              data: chart,
               backgroundColor: [
                 '#00b5e9',
                 '#fa4251',

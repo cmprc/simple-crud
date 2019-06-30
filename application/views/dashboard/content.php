@@ -43,26 +43,15 @@
                     <div class="table-responsive">
                         <table class="table table-top-campaign">
                             <tbody>
-                                <tr>
-                                    <td>1. Australia</td>
-                                    <td>$70,261.65</td>
-                                </tr>
-                                <tr>
-                                    <td>2. United Kingdom</td>
-                                    <td>$46,399.22</td>
-                                </tr>
-                                <tr>
-                                    <td>3. Turkey</td>
-                                    <td>$35,364.90</td>
-                                </tr>
-                                <tr>
-                                    <td>4. Germany</td>
-                                    <td>$20,366.96</td>
-                                </tr>
-                                <tr>
-                                    <td>5. France</td>
-                                    <td>$10,366.96</td>
-                                </tr>
+                                <?php
+                                foreach ($users as $key => $user) {
+                                    echo '<tr>
+                                                <td>' . $user['nome'] . '   
+                                                <td>' . $user['quantidade'] . ' tarefas
+                                            </tr> 
+                                            ';
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -82,7 +71,7 @@
                                 <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
                             </div>
                         </div>
-                        <canvas id="tasks-chart" height="261" width="412" class="chartjs-render-monitor" style="display: block; height: 209px; width: 330px;" data-value="<?= $numbers ?>"></canvas>
+                        <canvas id="tasks-chart" height="261" width="412" class="chartjs-render-monitor" style="display: block; height: 209px; width: 330px;" data-value="<?= $chart ?>"></canvas>
                         <div id="chartjs-tooltip">
                             <table></table>
                         </div>
