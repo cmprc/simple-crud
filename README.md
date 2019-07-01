@@ -1,4 +1,4 @@
-# Gerenciador de tarefas
+# simple-crud
 Um sistema simples de controle de tarefas utilizando CodeIgniter (v.3.1.10)
 
 Este projeto foi desenvolvido com o objetivo de utilizar um dos mais conhecidos frameworks php (CodeIgniter), e teve como principal motivação a possiblidade de experênciar esta tecnologia para acúmlo de conhecimentos no meio web.
