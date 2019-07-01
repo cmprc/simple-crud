@@ -10,7 +10,9 @@ _obs: esta aplicação ainda não possui sistema de login, podendo ser desenvolv
  - CodeIgniter - versão 3.1.10
  - PHP - versão 7.3.0
 
-### Instruções para execução local ### _sem git_
+### Instruções para execução local ### 
+_sem git_
+
 1. Faça download dos arquivos acima.
 2. Descompacte a pasta no local de execução do seu servidor local.
 3. Importe ou execute o arquivo 'system.sql' no seu SGBD para criação de sua base de dados.
