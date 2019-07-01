@@ -18,8 +18,16 @@
                 <input type="number" class="form-control" name="tempo" min="1" max="360" required>
             </div>
             <div class="form-group">
+                 <label class="form-control-label">Status</label>
+                 <select class="form-control" name="status">
+                     <option selected value="Espera">Espera</option>
+                     <option value="Desenvolvimento">Desenvolvimento</option>
+                     <option value="Finalizada">Finalizada</option>
+                 </select>
+            </div>
+            <div class="form-group">
                 <label class="form-control-label">Usuários</label>
-                <select class="form-control" name="usuarios[]" required multiple>
+                <select class="form-control js-select2" name="usuarios[]" required multiple>
                     <?php
                         foreach ($users as $key => $value)
                             echo '<option value="'.$value->id.'">'.$value->nome.'</option>';

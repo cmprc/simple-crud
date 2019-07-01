@@ -68,7 +68,7 @@ class Tasks extends CI_Controller
         if (empty($this->input->post('titulo')))
             redirect('tasks');
 
-        $data = array('title' => $this->input->post('titulo'), 'description' => $this->input->post('descricao'), 'time' => $this->input->post('tempo'));
+        $data = array('title' => $this->input->post('titulo'), 'description' => $this->input->post('descricao'), 'time' => $this->input->post('tempo'), 'status'=>$this->input->post('status'));
 
         if ($this->input->post('id') == null)
             $result = $this->task_model->insert($data, $this->input->post('usuarios'));

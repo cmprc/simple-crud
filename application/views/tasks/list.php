@@ -16,7 +16,7 @@
                 foreach ($tasks as $task) {
                     echo '<tr data-id="' . $task->id . '">
                                 <td>' . $task->title . '</td>
-                                <td>' . mb_strimwidth($task->description, 0, 30, '...') . '</td>
+                                <td>' . mb_strimwidth($task->description, 0, 20, '...') . '</td>
                                 <td>' . $task->status . '</td>
                                 <td>' . $task->get_deadline($task->time) . '</td>
                                 <td>' . $task->get_related_users() . '</td>

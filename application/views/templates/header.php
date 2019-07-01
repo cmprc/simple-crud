@@ -5,9 +5,11 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="<?= base_url() ?>assets/images/logos/fav.png" />
+    <!--[if IE]><link rel="shortcut icon" href="img/fav.ico"><![endif]-->
 
     <!-- Title Page-->
-    <title>eZoom</title>
+    <title>treZoom</title>
 
     <!-- Fontfaces CSS-->
     <link href="<?= base_url() ?>assets/fonts/fontawesome/css/fontawesome.min.css" rel="stylesheet" media="all">
@@ -36,11 +38,30 @@
             <div class="container">
                 <div class="header4-wrap">
                     <div class="header__logo">
-                        <a href="#">
-                            <img src="<?= base_url() ?>/assets/images/logos/logo.png" alt="Trello" />
+                        <a href="<?= site_url() ?>">
+                            <img src="<?= base_url() ?>/assets/images/logos/logo.png" class="logo" alt="Trello">
                         </a>
                     </div>
+                    <div class="header__tool">
+                        <div class="noti-wrap">
+                            <div class="noti__item js-item-menu">
+                                <i class="fa fa-plus"></i>
+                                <div class="mess-dropdown js-dropdown">
+                                    <div class="mess__item">
+                                        <div class="content">
+                                            <a href="<?= site_url('users/add') ?>">Novo usuário</a>
+                                        </div>
+                                    </div>
+                                    <div class="mess__item">
+                                        <div class="content">
+                                            <a href="<?= site_url('tasks/add') ?>">Nova tarefa</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.codeigniter.com/" target="_blank" class="link">ci_documentation</a>
+                    </div>
                 </div>
-            </div>
         </header>
         <!-- END HEADER DESKTOP -->

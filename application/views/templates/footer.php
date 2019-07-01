@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="copyright">
-                                <p>Copyright © 2019 E-Zoom.</p>
+                                <p>Copyright © 2019 rfcamp.</p>
                             </div>
                         </div>
                     </div>
@@ -50,6 +50,7 @@
                 if($(this).data('value') != undefined)
                     $(this).val($(this).data('value'));
             });
+            $(".js-select2").trigger('change');
         });
     </script>
 
