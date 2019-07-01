@@ -1,18 +1,17 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Tasks extends CI_Controller
-{
+class Tasks extends CI_Controller{
 
-    public function __construct()
-    {
+    // construtor do controller
+    public function __construct(){
         parent::__construct();
         $this->load->model('task_model');
         $this->load->helper('url_helper');
     }
 
-    public function index($slug = false)
-    {
+    // monta a página 'default' do controller (tarefas)
+    public function index($slug = false){
         if (!$slug) {
             $data['title'] = 'Tarefas';
             $data['subtitle'] = 'Todos os registros presentes na base de dados.';
@@ -24,12 +23,13 @@ class Tasks extends CI_Controller
             $this->load->view('templates/menu');
             $this->load->view('tasks/list', $data);
             $this->load->view('templates/footer');
-        } else
-            show_404();
+        }
+        else
+            show_404(); // direciona para página do erro 404
     }
 
-    public function add()
-    {
+    // monta a página de cadastro da tarefa
+    public function add(){
         $data['title'] = 'Tarefas';
         $data['subtitle'] = 'Cadastrar nova tarefa na base de dados.';
 
@@ -43,8 +43,8 @@ class Tasks extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function view($slug = null)
-    {
+    // monta a página view/edit da tarefa
+    public function view($slug = null){
         if (empty($slug))
             $this->index();
         else {
@@ -63,8 +63,8 @@ class Tasks extends CI_Controller
         }
     }
 
-    public function save()
-    {
+    // resgata todos os dados passados via POST e os adiciona na base de dados
+    public function save(){
         if (empty($this->input->post('titulo')))
             redirect('tasks');
 
@@ -81,8 +81,8 @@ class Tasks extends CI_Controller
             echo 'Erro no cadastro/edição da tarefa';
     }
 
-    public function delete($id = null)
-    {
+    // remove um registro da base de dados
+    public function delete($id = null){
         if (empty($id))
             $this->index();
         else {

@@ -10,8 +10,6 @@
     if (ctx) {
       ctx.height = 209;
       var chart = $(ctx).data('value');
-      if(chart == undefined)
-        chart = [0, 0, 0];
       var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {

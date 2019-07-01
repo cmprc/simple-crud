@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="https://www.codeigniter.com/" target="_blank" class="link">ci_documentation</a>
+                        <a href="https://www.codeigniter.com/user_guide/" target="_blank" class="link">ci_documentation</a>
                     </div>
                 </div>
         </header>

@@ -1,15 +1,14 @@
 <?php
 
-class Task_model extends CI_Model
-{
+class Task_model extends CI_Model{
 
-    public function __construct()
-    {
+    // construtor do model
+    public function __construct(){
         $this->load->database();
     }
 
-    public function get_tasks($slug = false)
-    {
+    // pega todas as tarefas da base de dados
+    public function get_tasks($slug = false){
         if (!$slug)
             $query = $this->db->get('tasks');
         else
@@ -18,6 +17,7 @@ class Task_model extends CI_Model
         return $query->result('task_model');
     }
 
+    // insere uma nova tarefa no banco de dados
     public function insert($data, $users){
         if($this->db->insert('tasks', $data)){
             $task_id = $this->db->insert_id('tasks');
@@ -27,6 +27,7 @@ class Task_model extends CI_Model
         return true;
     }
 
+    // atualiza um registro no banco de dados
     public function update($data, $id, $users){
         if($this->db->update('tasks', $data, array('id'=>$id))){
             if($this->db->delete('users_tasks', array('id_task'=>$id))){
@@ -37,10 +38,12 @@ class Task_model extends CI_Model
         return true;
     }
 
+    // remove um registro no banco de dados
     public function delete($id){
         return $this->db->delete('tasks', array('id'=>$id));
     }
 
+    // pega todos os usuários vinculados a determinada tarefa
     public function get_related_users($attribute='nome'){
         $result = '';
         $query = $this->db->select('users.*')->from('users_tasks')->where(array('id_task' => $this->id))->join('users', 'users.id = users_tasks.id_user')->get();
@@ -56,10 +59,11 @@ class Task_model extends CI_Model
         return substr($result, 0, strlen($result)-2);
     }
 
+    // constrói o prazo de entrega da tarefa, com base no período estipulado no cadastro
     public function get_deadline($days){
         if(is_numeric($days)){
             $date = new DateTime($this->date);
-            return $date->add(new DateInterval('P'.$days.'D'))->format('d.m.Y');
+            return $date->add(new DateInterval('P'.$days.'D'))->format('d.m.Y'); // adiciona o periodo (dias) na data de cadastro
         }
         return $days;
     }

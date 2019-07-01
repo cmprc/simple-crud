@@ -1,17 +1,17 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Users extends CI_Controller
-{
-  public function __construct()
-  {
+class Users extends CI_Controller{
+
+  // construtor do controller
+  public function __construct(){
     parent::__construct();
     $this->load->model('user_model');
     $this->load->helper('url_helper');
   }
 
-  public function index()
-  {
+  // monta a página 'default' do controller (usuarios)
+  public function index(){
     $data['users'] = $this->user_model->get_users();
     $data['title'] = 'Usuários';
     $data['subtitle'] = 'Todos os registros da base de dados';
@@ -24,8 +24,8 @@ class Users extends CI_Controller
     $this->load->view('templates/footer');
   }
 
-  public function view($slug = null)
-  {
+  // monta a página view/edit da tarefa
+  public function view($slug = null){
     if (empty($slug))
       $this->index();
     else {
@@ -41,8 +41,8 @@ class Users extends CI_Controller
     }
   }
 
-  public function add()
-  {
+  // monta a página de cadastro de usuario
+  public function add(){
     $data['title'] = 'Usuários';
     $data['subtitle'] = 'Cadastrar novo usuário na base de dados.';
 
@@ -53,9 +53,8 @@ class Users extends CI_Controller
     $this->load->view('templates/footer');
   }
 
-  public function save()
-  {
-
+  // recebe os dados via POST e os adiciona na base de dados
+  public function save(){
     if (empty($this->input->post('nome')))
       redirect('users');
 
@@ -69,11 +68,11 @@ class Users extends CI_Controller
     if ($result)
       redirect('users');
     else
-      echo 'Erro no cadastro de usuários';
+      echo 'Erro no cadastro/atualização de usuários';
   }
 
-  public function delete($id = null)
-  {
+  // remove um registro da base de dados
+  public function delete($id = null){
     if (empty($id))
       $this->index();
     else {
