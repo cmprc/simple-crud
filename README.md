@@ -9,6 +9,7 @@ Em suma, a presente aplicação consiste em dois CRUD's básicos de tarefas e us
 __Link para demonstração: <http://base.epizy.com/>__
 
 _obs: esta aplicação ainda não possui sistema de login, podendo ser desenvolvido em conjunto com outras funcionalidades de acordo com necessidades futuras._
+
 _obs2: elementos do aplicativo 'Trello', como logotipo e favicon, foram utilizados neste projeto a fim de despertar uma sensação de familiaridade para com este._
 
  - CodeIgniter - versão 3.1.10
